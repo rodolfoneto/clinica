@@ -22,11 +22,10 @@ class Patient
         $this->validate();
     }
 
-    public function validate(): void
+    private function validate(): void
     {
         DomainValidation::strMinLength(value: $this->name, minLength: 2);
         DomainValidation::strMaxLength(value: $this->name, maxLength: 255);
-
         DomainValidation::strMinLength(value: $this->gender, minLength: 1);
     }
 }
